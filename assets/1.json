@@ -1,0 +1,20 @@
+{
+    "name": "Bentley Continental GT",
+    "symbol": "C",
+    "image": "1.png",
+    "properties": {
+      "files": [
+        {
+          "uri": "1.png",
+          "type": "image/png"
+        }
+      ],
+      "creators": [
+        {
+          "address": "4RVseCWV9aT59sgi8qS22NFMwN2dbjmLCZPB332Wbc5R",
+          "share": 100
+        }
+      ]
+    }
+  }
+  

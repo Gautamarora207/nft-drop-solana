@@ -1,0 +1,20 @@
+{
+    "name": "Mustang",
+    "symbol": "M",
+    "image": "2.png",
+    "properties": {
+      "files": [
+        {
+          "uri": "2.png",
+          "type": "image/png"
+        }
+      ],
+      "creators": [
+        {
+          "address": "4RVseCWV9aT59sgi8qS22NFMwN2dbjmLCZPB332Wbc5R",
+          "share": 100
+        }
+      ]
+    }
+  }
+  
