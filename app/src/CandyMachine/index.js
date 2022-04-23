@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Connection, PublicKey } from '@solana/web3.js';
 import { Program, Provider, web3 } from '@project-serum/anchor';
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from '@solana/spl-token';
+import CountdownTimer from '../CountdownTimer';
 import { sendTransactions } from './connection';
 import './CandyMachine.css';
 import {
@@ -30,6 +31,7 @@ const CandyMachine = ({ walletAddress }) => {
         candyMachineProgram,
     );
   };
+
 
 
   useEffect(() => {
