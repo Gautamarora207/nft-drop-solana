@@ -33,7 +33,6 @@ const CandyMachine = ({ walletAddress }) => {
   };
 
 
-
   useEffect(() => {
     getCandyMachineState();
   }, []);
@@ -390,15 +389,34 @@ const CandyMachine = ({ walletAddress }) => {
     return [];
   };
 
+  const renderDropTimer = () => {
+    const currentDate = new Date();
+    
+    const dropDate = new Date(candyMachine.state.goLiveData * 1000);
+    console.log(dropDate);
+    if(currentDate < dropDate) {
+      return <CountdownTimer dropDate={dropDate} />;
+    }
+
+    return <p>{`Drop Date: ${candyMachine.state.goLiveDateTimeString}`}</p>
+  };
+
   return (
     // Only show this if machineStats is available
     candyMachine && (
       <div className="machine-container">
-        <p>{`Drop Date: ${candyMachine.state.goLiveDateTimeString}`}</p>
+        {renderDropTimer()}
         <p>{`Items Minted: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
-        <button className="cta-button mint-button" onClick={mintToken}>
+        {candyMachine.state.itemsRedeemed == candyMachine.state.itemsAvailable ? (
+          <p className='sub-text'>Sold out</p>
+        ) : (
+          <button className="cta-button mint-button" onClick={mintToken}>
             Mint NFT
         </button>
+        )
+        }        
+        {/* {mints.length > 0 && renderMintedItems()}
+        {isLoadingMints && <p>Loading Mints...</p>} */}
       </div>
     )
   );  
